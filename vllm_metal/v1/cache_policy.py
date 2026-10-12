@@ -1123,7 +1123,6 @@ class WorkerCachePlanner:
             return available
 
         if mode == "paged_attention_layout_budget":
-            print("Entering here")
             overhead = self._worker.model_runner.profile_run()
             plan = self._paged_attention_plan(overhead=overhead)
             if self._worker.vllm_config.cache_config.num_gpu_blocks_override is None:
